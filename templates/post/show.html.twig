@@ -5,17 +5,28 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Place</th>
+                <th>Lieu</th>
                 <td>{{ post.place }}</td>
             </tr>
             <tr>
-                <th>Date_time</th>
+                <th>Date et heure</th>
                 <td>{{ post.dateTime ? post.dateTime|date('Y-m-d H:i:s T') : '' }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Contenu</th>
                 <td>{{ post.content }}</td>
             </tr>
+            {% if post.attachedPicture %}
+            <tr>
+                <th>Image</th>
+                <td>
+                    <img
+                        src="{{ asset('assets/uploads/post_pictures/') ~ post.attachedPicture.filename }}"
+                        class=""
+                    >
+                </td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 

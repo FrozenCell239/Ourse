@@ -13,6 +13,14 @@
                 <td>
                     <a href="{{ path('app_post_show', {'id': post.id}) }}">Voir plus</a>
                 </td>
+                {% if post.attachedPicture %}
+                <td>
+                    <img
+                        src="{{ asset('assets/uploads/post_pictures/') ~ post.attachedPicture.filename }}"
+                        class=""
+                    >
+                </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
