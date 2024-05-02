@@ -42,9 +42,8 @@ class PostController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             # Getting images
             $image = $form->get('attached_picture')->getData();
-            dd($image);
             if($image){
-                $folder = 'products'; //Destination folder.
+                $folder = 'post_pictures'; //Destination folder.
                 $file = $pictureService->addPicture($image, $folder, 300, 300); //Calling images adding service.
                 $new_image = new Image();
                 $new_image->setFilename($file);

@@ -30,16 +30,14 @@ class PostType extends AbstractType
                 'attr' => ['hidden' => 'true']
             ])
             ->add('attached_picture', FileType::class, [
-                'multiple' => true,
+                'multiple' => false,
                 'mapped' => false,
                 'required' => false,
                 'constraints' => [
-                    new All(
-                        new ConstraintsImage([
-                            'maxWidth' => 1920,
-                            'maxWidthMessage' => 'Le format de l\'image ne doit pas dépasser {{ max_width }} pixels de large.'
-                        ])
-                    )
+                    new ConstraintsImage([
+                        'maxWidth' => 1920,
+                        'maxWidthMessage' => 'Le format de l\'image ne doit pas dépasser {{ max_width }} pixels de large.'
+                    ])
                 ]
             ])
         ;
