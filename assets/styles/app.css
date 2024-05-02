@@ -48,3 +48,9 @@
   color: var(--main-white);
 }
 
+/* About_us */
+.bg-section-header {
+    background-color: var(--main-soft);
+    width: 100%;
+}
+
