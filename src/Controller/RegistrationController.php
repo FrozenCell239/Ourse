@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class RegistrationController extends AbstractController
 {
-    #[Route('/register', name: 'app_register')]
+    #[Route('/admin/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         # Redirect non logged-in users
@@ -42,7 +42,7 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_index');
         }
 
-        return $this->render('registration/register.html.twig', [
+        return $this->render('admin/register.html.twig', [
             'registrationForm' => $form,
         ]);
     }
