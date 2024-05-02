@@ -1,4 +1,52 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
+	<section class="flex my-24 items-center justify-around">
+		<div class="">
+			<h1 class="text-6xl font-bold primary-color">
+				Bienvenue sur le site de l'OURSE !
+			</h1>
+			<p class="text-xl mt-4">L'OURSE est la monnaie locale citoyenne complémentaire, sociale et solidaire du Pays de Questembert à celui de Férel.</p>
+		</div>
+		<div>
+			<img src="{{ asset('assets/images/image-fond-home-page.png') }}" alt="Logo de l'OURSE" width="700">
+		</div>
+	</section>
+
+	<section class="my-24 font-bold secondary-color">
+		<h2 class=" flex text-4xl my-16 justify-center">Cette monaie est destinée a qui ?</h2>
+		<div class="flex justify-around items-center">
+			<div class="bg-white-color rounded-lg h-96 size-96 flex flex-col items-center justify-center p-16 shadow-lg">
+				<h5 class="my-8 text-3xl">Particulier</h5>
+				<p class="neutral-color text-center">Vous souhaitez trouver les informations pour adhérer à l'association et utiliser l'OURSE au quotidien ?</p>
+				<button class="py-2 px-5 my-12 bg-secondary-color text-white font-semibold rounded-full shadow-md">En savoir plus</button>
+			</div>
+			<div class="bg-white-color rounded-lg h-96 size-96 flex flex-col items-center justify-center p-16 shadow-xl">
+				<h4 class="my-8 text-3xl">Professionnel</h4>
+				<p class="neutral-color text-center">Vous cherchez toutes les informations pour accepter les OURSES dans vos moyens de paiement et soutenir l'économie locale ?</p>
+				<button class="py-2 my-12 px-5 bg-secondary-color text-white font-semibold rounded-full shadow-md">En savoir plus</button>
+			</div>
+		</div>
+	</section>
+
+    <section class="my-24">
+        <p class="text-xl">
+        Comme <a href="https://www.terreenvie.com/papillonstransition/?AccueilPapillons" class="secondary-color font-bold">Papillons Transition</a> nous partons du principe que notre quotidien va être confronté à une diminution des ressources et à des changements climatiques majeurs. </br>
+        Dans ce contexte, la monnaie locale participe à favoriser la résilience du territoire en mettant en lumière les acteurs locaux qui oeuvrent près de chez nous tout en gardant la monnaie sur le territoire sans qu'elle puisse retourner dans les bulles spéculatives de la finance.
+        </p>
+        <div class="outline outline-offset-2 outline-amber-200 rounded-lg p-12 px-48 my-16 text-4xl text-center">
+            <p class="mb-8">
+            Plus nous utilisons l'OURSE, plus les effets seront visibles.</br>
+            Il est possible de participer à toutes les réunions en cliquant sur le lien ci-dessous pour accéder à l'agenda.</p>
+            <a href="https://framagenda.org/index.php/apps/calendar/p/5SEyQbdkyXGNKBad/lOURSE" class="secondary-color font-bold">Cliquez et accédez à l'agenda</a>
+        </div>
+        <p class="text-xl mb-4">Pour y contribuer, rejoignez nous en vous inscrivant auprès du comptoir d'échange le plus proche de chez vous :</p>
+        <ul class="text-xl list-disc ml-24">
+            <li>Questembert : <a href="https://www.halleterrenative.fr/" class="secondary-color font-bold">Halle Terre Native</a></li>
+            <li>Muzillac / Ambon: <a href="https://www.biocooplepanierbio.com/" class="secondary-color font-bold">Biocoop Le Panier Bio</a></li>
+            <li>Nivillac : <a href="http://ovalenvert.fr/" class="secondary-color font-bold">O'Val en Vert</a></li>
+            <li>La Roche-Bernard : <a href="https://www.facebook.com/LaPetiteBanquise.librairie.cafe/" class="secondary-color font-bold">La Petite Banquisev</a></li>
+        </ul>
+    </section>
+
 {% endblock %}

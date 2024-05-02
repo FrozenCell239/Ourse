@@ -1,3 +1,50 @@
-body {
-    background-color: skyblue;
+:root {
+  font-family: "Nunito", sans-serif;
+  --main-primary: #c678a9;
+  --main-secondary: #cdcb61;
+  --main-secondary-two: #d8604c;
+  --main-soft: #B5B47B;
+  --main-neutral: #2e3038;
+  --main-white: #F2F2F2;
 }
+
+.bg-primary-color {
+  background-color: var(--main-primary);
+}
+
+.primary-color {
+  color: var(--main-primary);
+}
+
+.bg-secondary-color {
+  background-color: var(--main-secondary);
+}
+
+.secondary-color {
+  color: var(--main-secondary);
+}
+
+.bg-neutral-color {
+  background-color: var(--main-neutral);
+}
+
+.neutral-color {
+  color: var(--main-neutral);
+}
+
+.bg-soft-color {
+  background-color: var(--main-soft);
+}
+
+.soft-color {
+  color: var(--main-soft);
+}
+
+.bg-white-color {
+  background-color: var(--main-white);
+}
+
+.white-color {
+  color: var(--main-white);
+}
+

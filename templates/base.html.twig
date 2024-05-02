@@ -1,19 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Ourse : Bienvenue sur le site de l'OURSE !{% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        
-        {% block stylesheets %}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Ourse : Bienvenue sur le site de l'OURSE !
+			{% endblock %}
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+		<script src="https://cdn.tailwindcss.com"></script>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{% block stylesheets %}{% endblock %}
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		<header class="flex items-center justify-between">
+			<a href="#">
+				<img src={{ asset('assets/images/logo.jpg') }} alt="Logo de l'OURSE" width="300">
+			</a>
+			<nav>
+				<ul class="flex space-x-8 items-center mr-40 text-lg">
+					<li>
+						<a href="#">Accueil</a>
+					</li>
+					<li>
+						<a href="#">A propos</a>
+					</li>
+					<li>
+						<a href="#">Carte</a>
+					</li>
+					<li>
+						<a href="#">Actualités</a>
+					</li>
+					<li>
+						<a href="#">Particulier</a>
+					</li>
+					<li>
+						<a href="#">Professionnel</a>
+					</li>
+					<li>
+						<a href="#">
+							<button class="py-2 px-5 bg-primary-color text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">Connexion</button>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<div class="mx-40">
+			{% block body %}{% endblock %}
+		</div>
+		<Footer class="flex items-center justify-around bg-soft-color p-8 text-lg">
+			<div>
+			<p class="font-bold">Contact</p>
+			<p><span class="font-bold">Tel :</span> 06 81 35 98 99</p>
+			<p>Par <span class="font-bold">SMS uniquement merci</span></p>
+			</div>
+			<div>
+			<p>L'OURSE, Mairie de Muzillac allée Duigou 56190 Muzillac</p>
+			</div>
+			<div>
+				<a href="https://www.facebook.com/ourse.mlc/"> <img src="{{ asset('assets/images/facebook.png')}}" alt="facebook" width="50" class="shadow-lg rounded-full"> </a>
+			</div>
+		</Footer>
+	</body>
 </html>
