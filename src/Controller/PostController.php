@@ -19,8 +19,17 @@ class PostController extends AbstractController
     #[Route('/', name: 'app_post_index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
+        $posts = $postRepository->findAll();
+        foreach($posts as $post){
+            $post_content = $post->getContent();
+            if(strlen($post_content) > 125){
+                $post->setContent(
+                    substr($post_content, 0, 122)."..."
+                );
+            };
+        };
         return $this->render('post/index.html.twig', [
-            'posts' => $postRepository->findAll(),
+            'posts' => $posts,
         ]);
     }
 
