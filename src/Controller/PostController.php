@@ -19,8 +19,17 @@ class PostController extends AbstractController
     #[Route('/', name: 'app_post_index', methods: ['GET'])]
     public function index(PostRepository $postRepository): Response
     {
+        $posts = $postRepository->findAll();
+        foreach($posts as $post){
+            $post_content = $post->getContent();
+            if(strlen($post_content) > 125){
+                $post->setContent(
+                    substr($post_content, 0, 122)."..."
+                );
+            };
+        };
         return $this->render('post/index.html.twig', [
-            'posts' => $postRepository->findAll(),
+            'posts' => $posts,
         ]);
     }
 
@@ -42,9 +51,8 @@ class PostController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             # Getting images
             $image = $form->get('attached_picture')->getData();
-            dd($image);
             if($image){
-                $folder = 'products'; //Destination folder.
+                $folder = 'post_pictures'; //Destination folder.
                 $file = $pictureService->addPicture($image, $folder, 300, 300); //Calling images adding service.
                 $new_image = new Image();
                 $new_image->setFilename($file);
