@@ -1,35 +1,39 @@
 {% extends 'base.html.twig' %}
-{% block title %}Connexion{% endblock %}
+{% block title %}{% endblock %}
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	<section class="flex h-screen items-center justify-center">
+		<form method="post">
+			{% if error %}
+				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            Vous êtes déjà connecté(e) en tant que {{ app.user.userIdentifier }}. <a href="{{ path('app_logout') }}">Me déconnecter</a>
-        </div>
-    {% endif %}
+			{% if app.user %}
+				<div class="mb-3">
+					Vous êtes déjà connecté(e) en tant que
+					{{ app.user.userIdentifier }}.
+					<a href="{{ path('app_logout') }}">Me déconnecter</a>
+				</div>
+			{% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+			<div class="bg-primary-color flex flex-col p-8 rounded-lg w-96 h-96 shadow-lg">
+				<label for="inputEmail" class="font-bold text-xl">Email</label>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control p-4 rounded-lg mb-4" placeholder="exemple@gmail.com" autocomplete="email" required autofocus>
+				<label for="inputPassword" class="font-bold text-xl">Mot de passe</label>
+				<input type="password" name="password" id="inputPassword" class="form-control p-4 rounded-lg" autocomplete="current-password" required>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Se souvenir de moi
-        </label>
-    </div>
+				<div class="checkbox mb-3">
+					<label>
+						<input type="checkbox" name="_remember_me" class="mt-4">
+						Se souvenir de moi
+					</label>
+				</div>
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Connexion
-    </button>
-</form>
+				<button class="p-4 mt-8 bg-white text-black font-semibold rounded-lg shadow-md" type="submit">
+					Connexion
+				</button>
+			</form>
+		</div>
+	</section>
 {% endblock %}

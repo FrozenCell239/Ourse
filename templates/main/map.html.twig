@@ -1,5 +1,26 @@
 {% extends 'base.html.twig' %}
-{% block title %}Carte des commerces acceptants l'OURSE{% endblock %}
+{% block title %}Carte des commerces acceptants l'OURSE
+{% endblock %}
 {% block body %}
+
+	<section class="flex text-4xl font-bold h-48 items-center justify-center bg-section-header w-screen -mx-40 mb-24">
+		<H2>Carte</H2>
+	</section>
+
+	<section class="my-24">
+		<iframe width="100%" height="600px" frameborder="0" allowfullscreen="" src="https://umap.openstreetmap.fr/fr/map/les-prestataires-de-lourse_251740?scaleControl=false&amp;miniMap=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;allowEdit=false&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=databrowser&amp;captionBar=false"></iframe>
+		<p>
+			<a href="https://umap.openstreetmap.fr/fr/map/les-prestataires-de-lourse_251740" target="_blank" class="text-xl font-bold secondary-color">Voir en plein écran</a>
+		</p><br>
+		<br>
+		<iframe width="100%" height="600px" frameborder="0" allowfullscreen="" src="https://b4phc.r.a.d.sendibm1.com/mk/mr/sh/1f8JAEjGcfF85pDJZmSzQG0LBu/LCuf2SjXPQGO" class="mt-16"></iframe>
+		<p>
+			<a href="https://b4phc.r.a.d.sendibm1.com/mk/mr/sh/1f8JAEjGcfF85pDJZmSzQG0LBu/LCuf2SjXPQGO" target="_blank" class="text-xl font-bold secondary-color">Voir en plein écran</a>
+		</p><br>
+		<p class="text-xl">
+        Je suis membre prestataire et je remarque une erreur dans les données de la carte ci dessus
+        <a href="#" class="secondary-color">Devenir prestataire</a>
+        </p>
+	</section>
 
 {% endblock %}
