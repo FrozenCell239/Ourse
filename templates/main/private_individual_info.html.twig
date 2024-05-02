@@ -1,5 +1,73 @@
 {% extends 'base.html.twig' %}
-{% block title %}Particulier{% endblock %}
+{% block title %}Particulier
+{% endblock %}
 {% block body %}
+
+	<section class="flex text-4xl font-bold h-48 items-center justify-center bg-section-header w-screen -mx-40 mb-24">
+		<H2>Particulier</H2>
+	</section>
+
+	<section class="my-24">
+		<h2 class="text-3xl my-8 text-center secondary-color font-bold">Comment cela fonctionne-t-il ?</h2>
+		<p>
+			Toute personne souhaitant utiliser cette monnaie doit  <strong>adhérer</strong> à l'association OURSE en amenant ce <a href="https://mlcc-ourse.org/?mlcc-ourse.org/wakka.php&wiki=DocCommValides%2Fdownload&file=FORMAdhmodDef.pdf" class="secondary-color font-bold">bulletin d'adhésion téléchargeable</a> rempli au <strong>comptoir d'échange</strong> le plus proche. (voir plus bas). <strong>Vous pouvez maintenant adhérer en ligne</strong> sur <a href="https://framaforms.org/lourse-fiche-dadhesion-pour-les-particuliers-1533566569" class="secondary-color font-bold">ce formulaire</a>, en réglant votre cotisation par virement vers le compte indiqué par le formulaire.<br>
+			L'adhésion est à prix libre néanmoins conseillé à 10 Euro.</br></br>
+			
+			Les OURSE peuvent être obtenus dans un des cinq comptoirs d'échange (consultables sur la carte des prestataires), au taux de 1 EURO = 1 OURSE.</br></br>
+			
+			Ces OURSE peuvent être dépensés chez les prestataires qui l'acceptent. (voir plus bas)
+		</p>
+
+
+		<h2 class="text-3xl my-8 text-center secondary-color font-bold">Souscrire à l'abonnement</h2>
+        <div></div>
+        <p>
+        afin de recevoir régulièrement des OURSE dans votre compte d'échange habituel Vous pouvez utiliser <a href="https://framaforms.org/souscription-mensuel-d-ourse-1605090532" class="secondary-color font-bold">le formulaire de souscription</a> en ligne ou le bulletin de souscription d'Ourse sur internet par virement ponctuel ou régulier.
+
+        <br/>
+        <br/>
+        <a href="https://mlcc-ourse.org/?AcceuilParticulier/download&file=Bulletin_de_souscription_dOurse_sur_internetpar_virement_ponctuel_ou_rgulier.pdf" class="py-2 my-12 px-5 bg-secondary-color text-white font-semibold rounded-full shadow-md">Télécharger le bulletin de souscription</a>
+        </p>
+
+
+		<h2 class="text-3xl my-8 text-center secondary-color font-bold">Les prestataires</h2>
+        <div>
+        
+        <p>
+        Ce Logo, vous assure qu'il est possible de régler en Ourse.
+        </p>
+        <img src="{{asset('assets/images/AcceuilParticulier_OurSe_ourseprestataire_20191017212417_20191017212444_vignette_300_209_20200117155804_20200204204907.png')}}" alt="logo assurance ourse">
+        <p>
+        Pour les <a href="{{ path('app_map') }}" class="secondary-color font-bold">Localiser</a>
+        </p>
+        <a href="https://mlcc-ourse.org/?CommPrestaListeAComm/edit&newpage=1&theme=margot&squelette=1col.tpl.html&style=margot-fun.css&PageFooter=PageFooter%27&PageHeader=PageHeader%27&PageRapideHaut=PageRapideHaut%27&PageMenuHaut=PageMenuHaut%27&PageMenu=MenuCommPresta%27" class="secondary-color font-bold">CommPrestaListeAComm</a>
+        <p class="font-bold">Si vous avez repéré un prestataire près de chez vous qui souhaiterait accepter les Ourse, envoyez nous un message ICI</p>
+        </div>
+
+
+		<h2 class="text-3xl my-8 text-center secondary-color font-bold">Les Comptoirs d'échange</h2>
+        <p>
+        Les comptoires d'échange sont des lieux privilégier et permettent d'effectuer plusieurs opérations :</br>
+
+        <ul class="list-disc ml-8">
+            <li> <strong>Adhérer</strong><br> vous y trouverez les bulletins d'inscriptions à remplir et à donner au comptoire d'échange. Les bénévoles de l'Ourse viendront récupérer votre bulletin et vous recontactera pour réaliser votre carte d'adhérent. Vous pouvez pré-remplir votre adhésion en imprimant ce bulletin d'adhésion téléchargeable</li>
+            <li> <strong>Renouveler son adhésion</strong></br> A définir </li>
+            <li><strong>Echanger</strong></br> C'est ici que vous pourrez échanger vos Euros en monnaie locale. </li>
+        </ul>
+
+<p>Il y a forcement un comptoir d'échange proche de chez vous :</p>
+<ul class="list-disc ml-8">
+    <li>Questembert : Halle Terre Native</li>
+    <li>Muzillac / Ambon : Biocoop Le Panier Bio</li>
+    <li>La roche-Bernard : La Petite Banquise</li>
+    <li>Nivillac : O'Val en Vert</li>
+    <li>Damgan : Les Bijoux Marine</li>
+</ul>
+</br>
+</br>
+Si vous avez repéré un commerce près de chez vous qui souhaiterait devenir comptoir d'échange, envoyez nous un message <a href="#" class="secondary-color font-bold">ICI</a>
+        </p>
+
+	</section>
 
 {% endblock %}
