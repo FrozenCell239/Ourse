@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Actualités{% endblock %}
+{% block body %}
+    <h1>Actualités</h1>
+    <table class="table">
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.place }}</td>
+                <td>{{ post.dateTime ? post.dateTime|date('Y-m-d H:i:s T') : '' }}</td>
+                <td>{{ post.content }}</td>
+                <td>
+                    <a href="{{ path('app_post_show', {'id': post.id}) }}">Voir plus</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune actualité pour le moment.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

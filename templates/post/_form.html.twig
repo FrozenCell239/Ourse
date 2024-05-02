@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    {{ form_row(form.title, {label: "Titre"}) }}
+    {{ form_row(form.place, {label: "Lieu"}) }}
+    {{ form_row(form.date_time, {label: "Date et heure"}) }}
+    {{ form_row(form.content, {label: "Contenu"}) }}
+    {{ form_row(form.author, {label: " ", value: app.user.id}) }}
+    {{ form_row(form.attached_picture, {label: "Photo"}) }}
+    <button class="btn">{{ button_label|default("Publier") }}</button>
+{{ form_end(form) }}
