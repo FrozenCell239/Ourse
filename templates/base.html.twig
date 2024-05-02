@@ -3,8 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Ourse : Bienvenue sur le site de l'OURSE !
-			{% endblock %}
+			{% block title %}Ourse : Bienvenue sur le site de l'OURSE !{% endblock %}
 		</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
@@ -23,32 +22,32 @@
 	</head>
 	<body>
 		<header class="flex items-center justify-between">
-			<a href="#">
+			<a href="{{ path('app_index') }}">
 				<img src={{ asset('assets/images/logo.jpg') }} alt="Logo de l'OURSE" width="300">
 			</a>
 			<nav>
 				<ul class="flex space-x-8 items-center mr-40 text-lg">
 					<li>
-						<a href="">Accueil</a>
+						<a href="{{ path('app_index') }}">Accueil</a>
 					</li>
 					<li>
-						<a href="#">A propos</a>
+						<a href="{{ path('app_about_us') }}">A propos</a>
 					</li>
 					<li>
-						<a href="#">Carte</a>
+						<a href="{{ path('app_map') }}">Carte</a>
 					</li>
 					<li>
-						<a href="#">Actualités</a>
+						<a href="{{ path('app_post_index') }}">Actualités</a>
 					</li>
 					<li>
-						<a href="#">Particulier</a>
+						<a href="{{ path('app_private_individual_info') }}">Particulier</a>
 					</li>
 					<li>
-						<a href="#">Professionnel</a>
+						<a href="{{ path('app_professionnal_info') }}">Professionnel</a>
 					</li>
 					<li>
-						<a href="#">
-							<button class="py-2 px-5 bg-primary-color text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">Connexion</button>
+						<a href="{{ app.user ? path('app_logout') : path('app_login') }}">
+							<button class="py-2 px-5 bg-primary-color text-white font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">{{ app.user ? "Déconnexion" : "Connexion" }}</button>
 						</a>
 					</li>
 				</ul>
