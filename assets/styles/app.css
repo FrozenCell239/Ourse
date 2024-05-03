@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: "Nunito", sans-serif;
   --main-primary: #c678a9;
@@ -59,4 +63,3 @@
     background: var(--main-soft);
     width: 100%;
 }
-
