@@ -1,6 +1,15 @@
 {% extends 'base.html.twig' %}
-{% block title %}Espace Admin{% endblock %}
+{% block title %}Espace Admin
+{% endblock %}
 {% block body %}
-<a href="{{ path('app_post_new') }}">Créer une actualité</a>
-<a href="{{ path('app_register') }}">Créer un utilisateur</a>
+
+	<section class="flex h-48 items-center justify-around bg-section-header w-screen -mx-40 mb-24">
+		<H2 class="text-4xl font-bold">Dashboard</H2>
+        <a href="{{ path('app_index') }}" class="p-4 mt-8 bg-primary-color text-black font-semibold rounded-lg shadow-md hover:bg-fuchsia-700 shadow-lg">Retour au site</a>
+	</section>
+
+	<section class="flex flex-row my-32 gap-16 items-center justify-content">
+		<a href="{{ path('app_post_new') }}" class="flex w-1/2 h-64 justify-center items-center bg-primary-color rounded-lg hover:bg-fuchsia-700 shadow-lg text-3xl font-bold">Créer une actualité</a>
+		<a href="{{ path('app_register') }}" class="flex w-1/2 h-64 justify-center items-center bg-primary-color rounded-lg hover:bg-fuchsia-700 shadow-lg text-3xl font-bold">Créer un utilisateur</a>
+	</section>
 {% endblock %}

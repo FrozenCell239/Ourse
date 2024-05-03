@@ -1,17 +1,30 @@
 {% extends 'base.html.twig' %}
-{% block title %}Création d'un nouvel administrateur{% endblock %}
+{% block title %}Création d'un nouvel administrateur
+{% endblock %}
 {% block body %}
-    <h1>Création d'un nouvel administrateur</h1>
 
-    {{ form_errors(registrationForm) }}
+	<section class="flex h-48 items-center justify-around bg-section-header w-screen -mx-40 mb-24">
+		<H2 class="text-4xl font-bold">Ajouter un admin comme moi 😎</H2>
+		<div class="flex gap-8">
+			<a href="{{ path('app_index') }}" class="p-4 mt-8 bg-primary-color text-black font-semibold rounded-lg shadow-md hover:bg-fuchsia-700 shadow-lg">Retour au site</a>
+			<a href="{{ path('app_admin_index') }}" class="p-4 mt-8 bg-primary-color text-black font-semibold rounded-lg shadow-md hover:bg-fuchsia-700 shadow-lg">Dashboard</a>
+		</div>
+	</section>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
+	<section class="flex justify-center items-center bg-primary-color rounded-lg shadow-lg mx-96 p-16">
+		{{ form_errors(registrationForm) }}
+
+		{{ form_start(registrationForm) }}
+		{{ form_row(registrationForm.email) }}
+		{{ form_row(registrationForm.plainPassword, {
             label: 'Mot de passe'
         }) }}
 
-        <button type="submit" class="btn">Enregistrer</button>
-    {{ form_end(registrationForm) }}
-    <a href="{{ path('app_admin_index') }}">Annuler</a>
+		<div class="flex gap-8 mt-8">
+			<a href="{{ path('app_admin_index') }}" class="p-4 rounded-lg bg-secondary-color mb-4 text-center w-1/2 hover:bg-yellow-200">Annuler</a>
+			<button type="submit" class="p-4 rounded-lg mb-4 bg-white w-1/2 text-center hover:bg-fuchsia-700">Enregistrer</button>
+		</div>
+		{{ form_end(registrationForm) }}
+	</section>
+
 {% endblock %}

@@ -22,7 +22,7 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% if app.request.attributes.get('_route') != 'app_login' %}
+		{% if app.request.attributes.get('_route') != 'app_login' and app.request.attributes.get('_route') != 'app_admin_index' and app.request.attributes.get('_route') != 'app_post_new' and app.request.attributes.get('_route') != 'app_register' %}
 			<header class="flex items-center justify-between">
 				<a href="{{ path('app_index') }}">
 					<img src={{ asset('assets/images/logo.jpg') }} alt="Logo de l'OURSE" width="300">
@@ -51,6 +51,12 @@
 							<a href="{{ app.user ? path('app_logout') : path('app_login') }}">
 								<button class="py-2 px-5 bg-primary-color text-white font-semibold rounded-full shadow-md">{{ app.user ? "Déconnexion" : "Connexion" }}</button>
 							</a>
+							{# Afficher le btn dashboard pour admin #}
+							{% if app.user %}
+							<a href="{{ path('app_admin_index') }}">
+								<button class="py-2 px-5 bg-primary-color text-white font-semibold rounded-full shadow-md">Dashboard</button>
+							</a>
+							{% endif %}
 						</li>
 					</ul>
 				</nav>
@@ -58,7 +64,7 @@
 		{% endif %}
 		<div class="mx-40"> {% block body %}{% endblock %}
 			</div>
-			{% if app.request.attributes.get('_route') != 'app_login' %}
+			{% if app.request.attributes.get('_route') != 'app_login' and app.request.attributes.get('_route') != 'app_admin_index' and app.request.attributes.get('_route') != 'app_post_new' and app.request.attributes.get('_route') != 'app_register' %}
 				<Footer class="flex items-center justify-around bg-soft-color p-8 text-lg">
 					<div>
 						<p class="font-bold">Contact</p>

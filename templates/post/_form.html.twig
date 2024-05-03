@@ -1,9 +1,13 @@
 {{ form_start(form) }}
-    {{ form_row(form.title, {label: "Titre"}) }}
-    {{ form_row(form.place, {label: "Lieu"}) }}
-    {{ form_row(form.date_time, {label: "Date et heure"}) }}
-    {{ form_row(form.content, {label: "Contenu"}) }}
-    {{ form_row(form.author, {label: " ", value: app.user.id}) }}
-    {{ form_row(form.attached_picture, {label: "Photo"}) }}
-    <button class="btn">{{ button_label|default("Publier") }}</button>
+{{ form_row(form.title, {label: "Titre"}) }}
+{{ form_row(form.place, {label: "Lieu"}) }}
+{{ form_row(form.date_time, {label: "Date et heure"}) }}
+{{ form_row(form.content, {label: "Contenu"}) }}
+{{ form_row(form.author, {label: " ", value: app.user.id}) }}
+{{ form_row(form.attached_picture, {label: "Photo"}) }}
+<div class="flex gap-8 mt-16">
+	<a href="{{ path('app_admin_index') }}" class="p-4 w-1/3 rounded-lg bg-secondary-color mb-4 text-center w-1/2 hover:bg-yellow-200">Annuler</a>
+	<button class="p-4 rounded-lg mb-4 bg-white w-1/3 text-center hover:bg-fuchsia-700">{{ button_label|default("Publier") }}</button>
+	<a href="{{ path('app_post_index') }}" class="p-4 rounded-lg mb-4 bg-neutral-color white-color w-1/3 text-center hover:bg-fuchsia-700">back to list</a>
+</div>
 {{ form_end(form) }}

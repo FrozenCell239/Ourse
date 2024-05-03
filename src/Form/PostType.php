@@ -18,12 +18,27 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
-            ->add('place')
+            ->add('title', options:[
+                'attr' => ['placeholder' => 'Titre de l\'actualité',
+                'class' => 'form-control p-4 rounded-lg mb-4 w-full text-normal font-normal'
+                ]
+            ])
+            ->add('place', options:[
+                'attr' => ['placeholder' => 'Lieu de l\'actualité',
+                'class' => 'form-control p-4 rounded-lg mb-4 w-full text-normal font-normal'
+                ]
+            ])
             ->add('date_time', null, [
                 'widget' => 'single_text',
+                'attr' => ['class' => 'form-control flex p-4 rounded-lg mb-4 text-normal font-normal']
             ])
-            ->add('content')
+            ->add('content', options:[
+                'attr' => ['placeholder' => 'Contenu de l\'actualité',
+                'class' => 'form-control p-4 rounded-lg mb-4 w-full text-normal font-normal',
+                'rows' => 25,
+                'cols' => 100
+                ]
+            ])
             ->add('author', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => 'id',
@@ -33,12 +48,13 @@ class PostType extends AbstractType
                 'multiple' => false,
                 'mapped' => false,
                 'required' => false,
+                'attr' => ['class' => 'block cursor-pointer border border-slate-100 font-normal text-xl rounded-lg mb-4 bg-white '],
                 'constraints' => [
                     new ConstraintsImage([
                         'maxWidth' => 1920,
                         'maxWidthMessage' => 'Le format de l\'image ne doit pas dépasser {{ max_width }} pixels de large.'
                     ])
-                ]
+                    ]
             ])
         ;
     }

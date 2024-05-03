@@ -1,9 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %}Créer une actualité{% endblock %}
+{% block title %}
+{% endblock %}
 {% block body %}
-    <h1>Créer une actualité</h1>
 
-    {{ include('post/_form.html.twig') }}
+	<section class="flex h-48 items-center justify-around bg-section-header w-screen -mx-40 mb-24">
+		<H2 class="text-4xl font-bold">Crée des actualités qui feront le BUZZZZZ 🐝</H2>
+		<div class="flex gap-8">
+			<a href="{{ path('app_index') }}" class="p-4 mt-8 bg-primary-color text-black font-semibold rounded-lg shadow-md hover:bg-fuchsia-700 shadow-lg">Retour au site</a>
+			<a href="{{ path('app_admin_index') }}" class="p-4 mt-8 bg-primary-color text-black font-semibold rounded-lg shadow-md hover:bg-fuchsia-700 shadow-lg">Dashboard</a>
+		</div>
+	</section>
 
-    <a href="{{ path('app_admin_index') }}">Annuler</a>
+	<section class="flex justify-center text-xl my-24 font-bold items-center bg-primary-color rounded-lg shadow-lg p-16 w-full">
+		{{ include('post/_form.html.twig') }}
+	</section>
 {% endblock %}

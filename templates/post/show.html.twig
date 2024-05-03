@@ -1,38 +1,32 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ post.title }}{% endblock %}
+{% block title %}
+	{{ post.title }}
+{% endblock %}
 {% block body %}
-    <h1>{{ post.title }}</h1>
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ post.place }}</td>
-            </tr>
-            <tr>
-                <th>Date et heure</th>
-                <td>{{ post.dateTime ? post.dateTime|date('Y-m-d H:i:s T') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Contenu</th>
-                <td>{{ post.content }}</td>
-            </tr>
-            {% if post.attachedPicture %}
-            <tr>
-                <th>Image</th>
-                <td>
-                    <img
-                        src="{{ asset('assets/uploads/post_pictures/') ~ post.attachedPicture.filename }}"
-                        class=""
-                    >
-                </td>
-            </tr>
-            {% endif %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('app_post_index') }}">Retour</a>
-    {% if app.user %}
-    <a href="{{ path('app_post_edit', {'id': post.id}) }}">Modifer</a>
-    {{ include('post/_delete_form.html.twig') }}
-    {% endif %}
+	<section class="flex flex-col justify-center items-center my-24">
+		{% if post.attachedPicture %}
+			<img src="{{ asset('assets/uploads/post_pictures/') ~ post.attachedPicture.filename }}" class="">
+		{% endif %}
+        <H2 class="text-3xl font-bold text-center mb-4">{{ post.title }}</H2>
+		<div>
+			<p class="text-lg">
+				<span class="font-bold">lieu :
+				</span>
+				{{ post.place }}</p>
+			<p class="text-lg">
+				<span class="font-bold">Date et heure :
+				</span>
+				{{ post.dateTime ? post.dateTime|date('Y-m-d H:i:s') : '' }}</p>
+		</div>
+		<p class="text-xl my-16">{{ post.content }}</p>
+		<div class="flex gap-8 m-8 text-center">
+			<a href="{{ path('app_post_index') }}" class="px-5 py-2 bg-secondary-color text-black font-semibold rounded-full shadow-md hover:bg-yellow-200 shadow-lg">Retour</a>
+			{% if app.user %}
+				<a href="{{ path('app_post_edit', {'id': post.id}) }}" class="px-5 py-2 bg-primary-color text-black font-semibold rounded-full shadow-md hover:bg-fuchsia-700 shadow-lg">Modifer</a>
+				{{ include('post/_delete_form.html.twig') }}
+			{% endif %}
+		</div>
+	</section>
+
 {% endblock %}
