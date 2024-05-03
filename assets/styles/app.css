@@ -10,6 +10,7 @@
 
 .bg-primary-color {
   background-color: var(--main-primary);
+  background: var(--main-primary);
 }
 
 .primary-color {
@@ -18,6 +19,7 @@
 
 .bg-secondary-color {
   background-color: var(--main-secondary);
+  background: var(--main-secondary);
 }
 
 .secondary-color {
@@ -26,6 +28,7 @@
 
 .bg-neutral-color {
   background-color: var(--main-neutral);
+  background: var(--main-neutral);
 }
 
 .neutral-color {
@@ -34,6 +37,7 @@
 
 .bg-soft-color {
   background-color: var(--main-soft);
+  background: var(--main-soft);
 }
 
 .soft-color {
@@ -42,6 +46,7 @@
 
 .bg-white-color {
   background-color: var(--main-white);
+  background: var(--main-white);
 }
 
 .white-color {
@@ -51,6 +56,7 @@
 /* About_us */
 .bg-section-header {
     background-color: var(--main-soft);
+    background: var(--main-soft);
     width: 100%;
 }
 
